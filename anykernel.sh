@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=hyper kernel by steve
+kernel.string=adil kernel, based on hyper kernel by steve
 do.devicecheck=1
 do.modules=0
 do.systemless=1
