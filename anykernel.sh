@@ -4,23 +4,20 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=ExampleKernel by osm0sis @ xda-developers
+kernel.string=hyper kernel by steve
 do.devicecheck=1
 do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
-device.name1=maguro
-device.name2=toro
-device.name3=toroplus
-device.name4=tuna
-device.name5=
+device.name1=r8s
+device.name2=SM-G780F
 supported.versions=
 supported.patchlevels=
 '; } # end properties
 
 # shell variables
-block=/dev/block/platform/omap/omap_hsmmc.0/by-name/boot;
+block=/dev/block/platform/13100000.ufs/by-name/boot;
 is_slot_device=0;
 ramdisk_compression=auto;
 
@@ -36,7 +33,7 @@ set_perm_recursive 0 0 755 644 $ramdisk/*;
 set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
 
-## AnyKernel boot install
+## AnyKernel install
 dump_boot;
 
 # begin ramdisk changes
@@ -60,21 +57,5 @@ append_file fstab.tuna "usbdisk" fstab;
 # end ramdisk changes
 
 write_boot;
-## end boot install
-
-
-# shell variables
-#block=vendor_boot;
-#is_slot_device=1;
-#ramdisk_compression=auto;
-
-# reset for vendor_boot patching
-#reset_ak;
-
-
-## AnyKernel vendor_boot install
-#split_boot; # skip unpack/repack ramdisk since we don't need vendor_ramdisk access
-
-#flash_boot;
-## end vendor_boot install
+## end install
 
